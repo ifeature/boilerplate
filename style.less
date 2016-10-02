@@ -1,0 +1,28 @@
+.border(@_; @size: 1px; @color: black) {
+	border-style: solid;
+}
+
+.border(thick; @size: 1px; @color: black) {
+	border-width: @size * 2;
+	border-color: @color;
+}
+
+.border(thin; @size: 1px; @color: black) {
+	border-width: @size;
+	border-color: @color;
+}
+
+.headings(@n: 6) when (@n > 0) {
+	@color: steelblue;
+
+	h@{n} {
+		color: desaturate(@color, (@n - 1) * 10%);
+	}
+	.headings(@n - 1);
+}
+
+.headings();
+
+body {
+	.border(thick; 2px; #eee);
+}
