@@ -1,6 +1,6 @@
 'use strict';
 
-import './style.less';
+import './../style.less';
 import 'babel-polyfill';
 import $ from 'jquery';
 
